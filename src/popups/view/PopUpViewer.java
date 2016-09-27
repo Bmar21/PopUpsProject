@@ -35,8 +35,8 @@ public class PopUpViewer
 	
 	/**
 	 * Creates a popup to prompt user to choose yes/no/cancel to the supplied question.
-	 * @param question 
-	 * @return
+	 * @param question The question being asked.
+	 * @return The JOptionPane constant value for yes/no/cancel
 	 */
 	public int collectOption(String question)
 	{
