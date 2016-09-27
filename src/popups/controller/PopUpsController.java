@@ -13,7 +13,7 @@ public class PopUpsController
 	
 	public void start()
 	{
-		display.displayMessage("look at me!");
+		display.displayMessage("Payton you suck!");
 	}
 
 }
