@@ -13,7 +13,15 @@ public class PopUpsController
 	
 	public void start()
 	{
-		display.displayMessage("Payton you suck!");
+		int count = 0;
+		while(count < 10)
+		{	
+			display.displayMessage("Payton you suck!");
+			
+			String answer = display.collectResponse("Do you like bannanas?");
+			
+			count++;
+		}
 	}
 
 }
