@@ -13,7 +13,6 @@ public class PopUpsController
 	
 	public void start()
 	{
-		int count = 0;
 		String answer = "sample";
 		while(answer != null && !answer.equals(""))
 		{	
