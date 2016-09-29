@@ -30,7 +30,7 @@ public class PopUpsController
 	 */
 	private boolean isDouble(String potentialValue)
 	{
-		boolean vaildDouble = false;
+		boolean validDouble = false;
 		
 		try
 		{
@@ -42,9 +42,32 @@ public class PopUpsController
 			display.displayMessage("That was not s double =:<");
 		}
 		
-		return vaildDouble;
+		return validDouble;
 	}
-
+	
+	/**
+	 * Checks the supplied String value to see if it can be converted to an integer.
+	 * IF it cannot a popup message is displayed.
+	 * @param potentialValue The supplied String
+	 * @return whether a conversion to an integer is possible.
+	 */
+	private boolean isInteger(String potentialValue)
+	{
+		boolean validInteger = false;
+		
+		try
+		{
+			int testValue = Integer.parseInt(potentialValue);
+			validInteger = true;
+		}
+		catch(NumberFormatException notIntegerError)
+		{
+			display.displayMessage(notIntegerError.getMessage());
+			display.displayMessage("You need to type in an int");
+		}
+	
+			return validInteger; 
+	}
 
 
 
