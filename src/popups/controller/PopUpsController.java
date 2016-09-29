@@ -1,26 +1,39 @@
 package popups.controller;
 
 import popups.view.PopUpViewer; 
+import popups.model.PopUpsModel;
+import java.util.List;
+import java.util.ArrayList;
+ 
 
 public class PopUpsController 
 {
 	private PopUpViewer display;
+	private List<PopUpsModel> thingyList;
+	
 	
 	public PopUpsController()
 	{
 		display = new PopUpViewer();
+		thingyList = new ArrayList<PopUpsModel>();
 	}
 	
 	public void start()
 	{
+		learnLists(); 
+		
+	}
+	
+	private void askQuestionLoop()
+	{
 		String answer = "sample";
-		while(answer != null && !answer.equals(""))
+		while(answer != null && !isDouble(answer))
 		{	
-			display.displayMessage("Payton you suck!");
 			
-			answer = display.collectResponse("Does Payton suck?");
+			answer = display.collectResponse("you need to type in a double!");
 			
 		}
+		
 	}
 	
 	/** 
@@ -28,7 +41,7 @@ public class PopUpsController
 	 * @param potentialValue The supplied String
 	 * @return Whether the conversion to a double is possible as a boolean value. 
 	 */
-	private boolean isDouble(String potentialValue)
+ 	private boolean isDouble(String potentialValue)
 	{
 		boolean validDouble = false;
 		
@@ -39,7 +52,7 @@ public class PopUpsController
 		}
 		catch(NumberFormatException notDoubleError)
 		{
-			display.displayMessage("That was not s double =:<");
+			display.displayMessage("That was not a double =:<");
 		}
 		
 		return validDouble;
@@ -69,6 +82,14 @@ public class PopUpsController
 			return validInteger; 
 	}
 
-
+	private void learnLists()
+	{
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		PopUpsModel firstThingy = new PopUpsModel();
+		thingyList.add(firstThingy);
+		PopUpsModel secondThingy = new PopUpsModel();
+		thingyList.add(secondThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+	}
 
 }
