@@ -89,6 +89,10 @@ public class PopUpsController
 		thingyList.add(firstThingy);
 		PopUpsModel secondThingy = new PopUpsModel();
 		thingyList.add(secondThingy);
+		PopUpsModel thirdThingy = new PopUpsModel();
+		thingyList.add(thirdThingy);
+		PopUpsModel fourthThingy = new PopUpsModel();
+		thingyList.add(fourthThingy);
 		display.displayMessage("This is the size of the list: " + thingyList.size());
 	}
 
