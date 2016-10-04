@@ -93,7 +93,41 @@ public class PopUpsController
 		thingyList.add(thirdThingy);
 		PopUpsModel fourthThingy = new PopUpsModel();
 		thingyList.add(fourthThingy);
+		PopUpsModel fifthThingy = new PopUpsModel();
+		thingyList.add(fifthThingy);
 		display.displayMessage("This is the size of the list: " + thingyList.size());
+		
+		for (int index = 0; index < 5; index++)
+		{
+			PopUpsModel loopThingy = new PopUpsModel();
+			thingyList.add(loopThingy);
+		}
+	
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage("The thingy at this spot has words of: " + thingyList.get(index).getWords());
+		}
+		
+		PopUpsModel specialThingy = new PopUpsModel();
+		specialThingy.setWords("not null stuff");
+		
+		thingyList.add(1, specialThingy);
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage("The message at " + index + " is " + thingyList.get(index).getWords());
+		}
+		
+		thingyList.get(3).setWords("I just changed what is inside");
+		PopUpsModel tempThing = thingyList.get(4);
+		tempThing.setWords("also changed");
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());
+		}
+	
+	
 	}
 
 }
