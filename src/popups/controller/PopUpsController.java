@@ -126,8 +126,41 @@ public class PopUpsController
 		{
 			display.displayMessage(thingyList.get(index).getWords());
 		}
+		
+		PopUpsModel replacement = new PopUpsModel();
+		replacement.setWords("I am a replicant");
+		
+		PopUpsModel old = thingyList.set(0, replacement);
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());
+		}
+		old.setWords("I was replaced :(");
+		display.displayMessage(old.getWords());
+		
+		thingyList.remove(4);
+		display.displayMessage("The size is now " + thingyList.size());
+		old = thingyList.remove(4);
+		display.displayMessage("The size is now " + thingyList.size());
+		display.displayMessage("This what I removed: " + old.getWords());
+		thingyList.add(0, old);
+		
+		for (PopUpsModel currentThingy : thingyList)
+		{
+			display.displayMessage("The current value is " + currentThingy.getWords());
+		}
+		
+		for (PopUpsModel currentThingy : thingyList)
+		{
+			currentThingy.setWords(currentThingy.getWords() + "number");
+		}
 	
+		for (PopUpsModel currentThingy : thingyList)
+		{
+			display.displayMessage("The current value is " + currentThingy.getWords());
+		}
 	
 	}
-
+	
 }
